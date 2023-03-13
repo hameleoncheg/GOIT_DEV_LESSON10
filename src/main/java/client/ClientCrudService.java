@@ -16,9 +16,9 @@ public class ClientCrudService {
     public long createNewClient(String name) {
         Client newClient = new Client();
         if (name.length() < 2) {
-            System.out.println("Incorrect name. The name must be 3 or more characters.");
+            System.out.println("Error. The name must be 3 or more characters.");
         } else if (name.length() > 200) {
-            System.out.println("Incorrect name. The name must be less than 200 characters.");
+            System.out.println("Error. The name must be less than 200 characters.");
         } else {
             Transaction transaction = session.beginTransaction();
             newClient.setName(name);

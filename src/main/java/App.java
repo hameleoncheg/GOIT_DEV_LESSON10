@@ -1,10 +1,8 @@
-
 import client.Client;
 import client.ClientCrudService;
 import org.hibernate.Session;
 import planet.PlanetCrudService;
 import services.hibernate.HibernateUtil;
-
 import java.util.List;
 
 public class App {

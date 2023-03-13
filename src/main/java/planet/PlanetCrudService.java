@@ -18,7 +18,7 @@ public class PlanetCrudService {
         boolean validValue = id.matches("^[A-Z0-9]+$");
 
         if (!validValue) {
-            System.out.println("Not valid id! The planet id must be write only latins letters in upper case and can have numbers.");
+            System.out.println("Error! The planet id must be write only latins letters in upper case and can have numbers.");
         } else {
             newPlanet.setId(id);
             newPlanet.setName(name);
