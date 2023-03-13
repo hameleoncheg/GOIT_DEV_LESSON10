@@ -30,5 +30,3 @@ INSERT INTO ticket (client_id, from_planet_id, to_planet_id) VALUES
 (9, 'ER', 'VEN'),
 (10, 'VEN', 'JUP');
 
-
-select * from client c
