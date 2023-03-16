@@ -1,10 +1,11 @@
 package planet;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
+import lombok.ToString;
+import ticket.Ticket;
+
+import java.util.List;
 
 @Table(name = "planet")
 @Entity
@@ -13,22 +14,16 @@ public class Planet {
     @Id
     private String id;
 
-    @Column(nullable = false, length = 500)
+    @Column(nullable = false, length = 200)
     private String name;
 
-    public String getId() {
-        return id;
-    }
+    @ToString.Exclude
+    @OneToMany(mappedBy = "planetFrom")
+    private List<Ticket> ticketsFromList;
 
-    public void setId(String id) {
-        this.id = id;
-    }
+    @ToString.Exclude
+    @OneToMany(mappedBy = "planetTo")
+    private List<Ticket> ticketsToList;
 
-    public String getName() {
-        return name;
-    }
 
-    public void setName(String name) {
-        this.name = name;
-    }
 }
